@@ -1,8 +1,27 @@
 import besom.*
 import besom.api.docker
+import besom.api.docker.{Container, RemoteImage}
+import besom.api.docker.inputs.*
 
-@main def main(): Unit = Pulumi.run {
-  val network = docker.Network("network")
+object Main {
+  Pulumi.run {
+    val msImage: Output[RemoteImage] = docker.RemoteImage(
+      "msImage",
+      docker.RemoteImageArgs(
+        name = s"ubuntu",
+        keepLocally = true
+      )
+    )
 
-  Stack(network)
+    val msContainer: Output[Container] = docker.Container(
+      "msContainer",
+      docker.ContainerArgs(
+        image = msImage.imageId
+      )
+    )
+
+    Stack(msContainer)
+
+  }
 }
+
