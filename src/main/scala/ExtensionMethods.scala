@@ -3,7 +3,7 @@ import besom.api.docker
 import besom.api.docker.{Container, RemoteImage}
 import besom.api.docker.inputs.*
 
-object Main {
+object ExtensionMethods {
   Pulumi.run {
     val msImage: Output[RemoteImage] = docker.RemoteImage(
       "msImage",
