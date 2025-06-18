@@ -2,7 +2,7 @@ name := "intellij-scala3"
 
 version := "1.0"
 
-scalaVersion := "3.3.3"
+scalaVersion := "3.7.1"
 
 scalacOptions ++= Seq(
   "-Wvalue-discard",
