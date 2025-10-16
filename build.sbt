@@ -1,10 +1,11 @@
 val catsEffectVersion = "3.6.1"
 val jsoniterScalaVersion = "2.37.2"
-val tapirVersion = "1.11.35" 
+val tapirVersion = "1.11.35"
+val fs2Version = "3.12.2" 
 
 name := "intellij-scala3"
 version := "1.0"
-scalaVersion := "3.7.2"
+scalaVersion := "3.7.3"
 scalacOptions ++= Seq(
   "-Wvalue-discard",
   "-Wnonunit-statement"
@@ -19,4 +20,5 @@ libraryDependencies ++= Seq(
   "com.softwaremill.sttp.tapir" %% "tapir-json-circe" % tapirVersion,
   "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-core" % jsoniterScalaVersion,
   "com.github.plokhotnyuk.jsoniter-scala" %% "jsoniter-scala-macros" % jsoniterScalaVersion,
+  "co.fs2" %% "fs2-core" % fs2Version,
 )
